@@ -30,8 +30,8 @@ export default function Sidebar({ selectedNav, setSelectedNav }: SidebarProps) {
       case 'Generate music':
         router.push('/generate-music')
         break
-      case 'Sound effects':
-        // Will add this route later
+      case 'Your library':
+        router.push('/my-library')
         break
       case 'Discord':
         // External link or future page
@@ -259,18 +259,18 @@ export default function Sidebar({ selectedNav, setSelectedNav }: SidebarProps) {
               </span>
             </div>
 
-            {/* Sound Effects */}
+            {/* Your library */}
             <div 
-              onClick={() => handleNavClick('Sound effects')}
-              onMouseEnter={() => setHoveredNav('Sound effects')}
+              onClick={() => handleNavClick('Your library')}
+              onMouseEnter={() => setHoveredNav('Your library')}
               onMouseLeave={() => setHoveredNav(null)}
               className="nav-item"
               style={{
                 width: '100%',
                 height: '36px',
                 borderRadius: '8px',
-                backgroundColor: selectedNav === 'Sound effects' ? 'rgba(197, 188, 255, 0.16)' : 'transparent',
-                border: selectedNav === 'Sound effects' ? '1px solid rgba(255, 255, 255, 0.12)' : '1px solid transparent',
+                backgroundColor: selectedNav === 'Your library' ? 'rgba(197, 188, 255, 0.16)' : 'transparent',
+                border: selectedNav === 'Your library' ? '1px solid rgba(255, 255, 255, 0.12)' : '1px solid transparent',
                 display: 'flex',
                 alignItems: 'center',
                 paddingLeft: '12px',
@@ -279,17 +279,17 @@ export default function Sidebar({ selectedNav, setSelectedNav }: SidebarProps) {
                 transition: 'all 0.3s ease'
               }}>
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ transition: 'all 0.3s ease' }}>
-                <path d="M3.66667 1.4C3.66667 1.03133 3.368 1 3 1C2.63133 1 2.33333 1.03133 2.33333 1.4V7H3.66667V1.4ZM2.33333 12.6C2.33333 12.9673 2.63133 13 3 13C3.36867 13 3.66667 12.9673 3.66667 12.6V10.3333H2.33333V12.6ZM4.59933 7.66667H1.39933C1.03067 7.66667 1 7.96533 1 8.33333V9C1 9.36867 1.03067 9.66667 1.39933 9.66667H4.6C4.96667 9.66667 5 9.36867 5 9V8.33333C5 7.96533 4.96667 7.66667 4.59933 7.66667ZM12.5993 8.33333H9.39867C9.03067 8.33333 9 8.632 9 9V9.66667C9 10.0353 9.03067 10.3333 9.39933 10.3333H12.6C12.9667 10.3333 13 10.0353 13 9.66667V9C13 8.632 12.9667 8.33333 12.5993 8.33333ZM9 5C9 4.632 8.96667 4.33333 8.59933 4.33333H5.39933C5.03067 4.33333 5 4.632 5 5V5.66667C5 6.03533 5.03067 6.33333 5.39933 6.33333H8.6C8.96667 6.33333 9 6.03533 9 5.66667V5ZM7.66667 1.4C7.66667 1.03133 7.368 1 7 1C6.63133 1 6.33333 1.03133 6.33333 1.4V3.66667H7.66667V1.4ZM6.33333 12.6C6.33333 12.9673 6.63133 13 7 13C7.36867 13 7.66667 12.9673 7.66667 12.6V7H6.33333V12.6ZM11.6667 1.4C11.6667 1.03133 11.368 1 11 1C10.6313 1 10.3333 1.03133 10.3333 1.4V7.66667H11.6667V1.4ZM10.3333 12.6C10.3333 12.9673 10.6313 13 11 13C11.3687 13 11.6667 12.9673 11.6667 12.6V11H10.3333V12.6Z" fill={selectedNav === 'Sound effects' || hoveredNav === 'Sound effects' ? '#AB9EFF' : '#A4A4B4'}/>
+                <path d="M7.7 5.00016H0.7C0.315 5.00016 0 5.30016 0 5.66683C0 6.0335 0.315 6.3335 0.7 6.3335H7.7C8.085 6.3335 8.4 6.0335 8.4 5.66683C8.4 5.30016 8.085 5.00016 7.7 5.00016ZM7.7 2.3335H0.7C0.315 2.3335 0 2.6335 0 3.00016C0 3.36683 0.315 3.66683 0.7 3.66683H7.7C8.085 3.66683 8.4 3.36683 8.4 3.00016C8.4 2.6335 8.085 2.3335 7.7 2.3335ZM11.2 7.66683V5.66683C11.2 5.30016 10.885 5.00016 10.5 5.00016C10.115 5.00016 9.8 5.30016 9.8 5.66683V7.66683H7.7C7.315 7.66683 7 7.96683 7 8.3335C7 8.70016 7.315 9.00016 7.7 9.00016H9.8V11.0002C9.8 11.3668 10.115 11.6668 10.5 11.6668C10.885 11.6668 11.2 11.3668 11.2 11.0002V9.00016H13.3C13.685 9.00016 14 8.70016 14 8.3335C14 7.96683 13.685 7.66683 13.3 7.66683H11.2ZM0.7 9.00016H4.9C5.285 9.00016 5.6 8.70016 5.6 8.3335C5.6 7.96683 5.285 7.66683 4.9 7.66683H0.7C0.315 7.66683 0 7.96683 0 8.3335C0 8.70016 0.315 9.00016 0.7 9.00016Z" fill={selectedNav === 'Your library' || hoveredNav === 'Your library' ? '#AB9EFF' : '#A4A4B4'}/>
               </svg>
               <span style={{
                 marginLeft: '12px',
-                color: selectedNav === 'Sound effects' || hoveredNav === 'Sound effects' ? '#FFFFFF' : '#A4A4B4',
+                color: selectedNav === 'Your library' || hoveredNav === 'Your library' ? '#FFFFFF' : '#A4A4B4',
                 fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
                 fontSize: '15px',
                 fontWeight: 500,
                 transition: 'color 0.3s ease'
               }}>
-                Sound effects
+                Your library
               </span>
             </div>
           </div>
