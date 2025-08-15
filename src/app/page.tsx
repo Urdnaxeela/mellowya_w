@@ -187,6 +187,8 @@ export default function Home() {
             {/* Generate Music */}
             <div 
               onClick={() => setSelectedNav('Generate music')}
+              onMouseEnter={() => setHoveredNav('Generate music')}
+              onMouseLeave={() => setHoveredNav(null)}
               className="nav-item"
               style={{
                 width: '100%',
@@ -199,12 +201,12 @@ export default function Home() {
                 paddingLeft: '12px',
                 paddingRight: '12px',
                 cursor: 'pointer',
-                transition: 'all 0.2s ease'
+                transition: 'all 0.3s ease'
               }}>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ transition: 'all 0.3s ease' }}>
                 <g clipPath="url(#clip0_107_2624)">
-                  <path d="M4.95072 12.8024C5.31475 12.8024 5.66388 12.6578 5.92129 12.4004C6.1787 12.143 6.32331 11.7939 6.32331 11.4298C6.32331 11.0658 6.1787 10.7167 5.92129 10.4592C5.66388 10.2018 5.31475 10.0572 4.95072 10.0572C4.58668 10.0572 4.23756 10.2018 3.98015 10.4592C3.72274 10.7167 3.57813 11.0658 3.57812 11.4298C3.57813 11.7939 3.72274 12.143 3.98015 12.4004C4.23756 12.6578 4.58668 12.8024 4.95072 12.8024ZM11.1276 11.0866C11.4915 11.0866 11.8405 10.942 12.0979 10.6847C12.3552 10.4273 12.4998 10.0783 12.4998 9.71442C12.4998 9.35051 12.3552 9.0015 12.0979 8.74417C11.8405 8.48685 11.4915 8.34229 11.1276 8.34229C10.7637 8.34229 10.4147 8.48685 10.1574 8.74417C9.90005 9.0015 9.75549 9.35051 9.75549 9.71442C9.75549 10.0783 9.90005 10.4273 10.1574 10.6847C10.4147 10.942 10.7637 11.0866 11.1276 11.0866Z" stroke={selectedNav === 'Generate music' ? '#AB9EFF' : '#A4A4B4'} strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M12.5 9.71471V4.33433C12.4997 4.2818 12.4874 4.23003 12.4639 4.18303C12.4405 4.13603 12.4065 4.09505 12.3647 4.06325C12.3229 4.03145 12.2744 4.00968 12.2228 3.99963C12.1712 3.98957 12.1181 3.9915 12.0674 4.00527L9.32218 4.76696M12.5 5.94019L7.50092 7.32883M6.32401 11.4297V8.64505M2.53941 6.56531V8.64413M1.5 7.60472H3.57883M5.06462 2.87511C5.4725 2.32424 5.72365 1.19775 5.72365 1.19775C5.72365 1.19775 5.97479 2.32424 6.38176 2.87511C6.79331 3.43057 8.10312 3.91636 8.10312 3.91636C8.10312 3.91636 6.79239 4.40215 6.38176 4.95852C5.97479 5.50848 5.72365 6.63497 5.72365 6.63497C5.72365 6.63497 5.4725 5.50939 5.06462 4.95761C4.65399 4.40307 3.34418 3.91636 3.34418 3.91636C3.34418 3.91636 4.65399 3.43057 5.06462 2.87511Z" stroke={selectedNav === 'Generate music' ? '#AB9EFF' : '#A4A4B4'} strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M4.95072 12.8024C5.31475 12.8024 5.66388 12.6578 5.92129 12.4004C6.1787 12.143 6.32331 11.7939 6.32331 11.4298C6.32331 11.0658 6.1787 10.7167 5.92129 10.4592C5.66388 10.2018 5.31475 10.0572 4.95072 10.0572C4.58668 10.0572 4.23756 10.2018 3.98015 10.4592C3.72274 10.7167 3.57813 11.0658 3.57812 11.4298C3.57813 11.7939 3.72274 12.143 3.98015 12.4004C4.23756 12.6578 4.58668 12.8024 4.95072 12.8024ZM11.1276 11.0866C11.4915 11.0866 11.8405 10.942 12.0979 10.6847C12.3552 10.4273 12.4998 10.0783 12.4998 9.71442C12.4998 9.35051 12.3552 9.0015 12.0979 8.74417C11.8405 8.48685 11.4915 8.34229 11.1276 8.34229C10.7637 8.34229 10.4147 8.48685 10.1574 8.74417C9.90005 9.0015 9.75549 9.35051 9.75549 9.71442C9.75549 10.0783 9.90005 10.4273 10.1574 10.6847C10.4147 10.942 10.7637 11.0866 11.1276 11.0866Z" stroke={selectedNav === 'Generate music' || hoveredNav === 'Generate music' ? '#AB9EFF' : '#A4A4B4'} strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M12.5 9.71471V4.33433C12.4997 4.2818 12.4874 4.23003 12.4639 4.18303C12.4405 4.13603 12.4065 4.09505 12.3647 4.06325C12.3229 4.03145 12.2744 4.00968 12.2228 3.99963C12.1712 3.98957 12.1181 3.9915 12.0674 4.00527L9.32218 4.76696M12.5 5.94019L7.50092 7.32883M6.32401 11.4297V8.64505M2.53941 6.56531V8.64413M1.5 7.60472H3.57883M5.06462 2.87511C5.4725 2.32424 5.72365 1.19775 5.72365 1.19775C5.72365 1.19775 5.97479 2.32424 6.38176 2.87511C6.79331 3.43057 8.10312 3.91636 8.10312 3.91636C8.10312 3.91636 6.79239 4.40215 6.38176 4.95852C5.97479 5.50848 5.72365 6.63497 5.72365 6.63497C5.72365 6.63497 5.4725 5.50939 5.06462 4.95761C4.65399 4.40307 3.34418 3.91636 3.34418 3.91636C3.34418 3.91636 4.65399 3.43057 5.06462 2.87511Z" stroke={selectedNav === 'Generate music' || hoveredNav === 'Generate music' ? '#AB9EFF' : '#A4A4B4'} strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round"/>
                 </g>
                 <defs>
                   <clipPath id="clip0_107_2624">
@@ -214,10 +216,11 @@ export default function Home() {
               </svg>
               <span style={{
                 marginLeft: '12px',
-                color: selectedNav === 'Generate music' ? '#FFFFFF' : '#A4A4B4',
+                color: selectedNav === 'Generate music' || hoveredNav === 'Generate music' ? '#FFFFFF' : '#A4A4B4',
                 fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
                 fontSize: '15px',
-                fontWeight: 500
+                fontWeight: 500,
+                transition: 'color 0.3s ease'
               }}>
                 Generate music
               </span>
@@ -226,6 +229,8 @@ export default function Home() {
             {/* Sound Effects */}
             <div 
               onClick={() => setSelectedNav('Sound effects')}
+              onMouseEnter={() => setHoveredNav('Sound effects')}
+              onMouseLeave={() => setHoveredNav(null)}
               className="nav-item"
               style={{
                 width: '100%',
@@ -238,17 +243,18 @@ export default function Home() {
                 paddingLeft: '12px',
                 paddingRight: '12px',
                 cursor: 'pointer',
-                transition: 'all 0.2s ease'
+                transition: 'all 0.3s ease'
               }}>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3.66667 1.4C3.66667 1.03133 3.368 1 3 1C2.63133 1 2.33333 1.03133 2.33333 1.4V7H3.66667V1.4ZM2.33333 12.6C2.33333 12.9673 2.63133 13 3 13C3.36867 13 3.66667 12.9673 3.66667 12.6V10.3333H2.33333V12.6ZM4.59933 7.66667H1.39933C1.03067 7.66667 1 7.96533 1 8.33333V9C1 9.36867 1.03067 9.66667 1.39933 9.66667H4.6C4.96667 9.66667 5 9.36867 5 9V8.33333C5 7.96533 4.96667 7.66667 4.59933 7.66667ZM12.5993 8.33333H9.39867C9.03067 8.33333 9 8.632 9 9V9.66667C9 10.0353 9.03067 10.3333 9.39933 10.3333H12.6C12.9667 10.3333 13 10.0353 13 9.66667V9C13 8.632 12.9667 8.33333 12.5993 8.33333ZM9 5C9 4.632 8.96667 4.33333 8.59933 4.33333H5.39933C5.03067 4.33333 5 4.632 5 5V5.66667C5 6.03533 5.03067 6.33333 5.39933 6.33333H8.6C8.96667 6.33333 9 6.03533 9 5.66667V5ZM7.66667 1.4C7.66667 1.03133 7.368 1 7 1C6.63133 1 6.33333 1.03133 6.33333 1.4V3.66667H7.66667V1.4ZM6.33333 12.6C6.33333 12.9673 6.63133 13 7 13C7.36867 13 7.66667 12.9673 7.66667 12.6V7H6.33333V12.6ZM11.6667 1.4C11.6667 1.03133 11.368 1 11 1C10.6313 1 10.3333 1.03133 10.3333 1.4V7.66667H11.6667V1.4ZM10.3333 12.6C10.3333 12.9673 10.6313 13 11 13C11.3687 13 11.6667 12.9673 11.6667 12.6V11H10.3333V12.6Z" fill={selectedNav === 'Sound effects' ? '#AB9EFF' : '#A4A4B4'}/>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ transition: 'all 0.3s ease' }}>
+                <path d="M3.66667 1.4C3.66667 1.03133 3.368 1 3 1C2.63133 1 2.33333 1.03133 2.33333 1.4V7H3.66667V1.4ZM2.33333 12.6C2.33333 12.9673 2.63133 13 3 13C3.36867 13 3.66667 12.9673 3.66667 12.6V10.3333H2.33333V12.6ZM4.59933 7.66667H1.39933C1.03067 7.66667 1 7.96533 1 8.33333V9C1 9.36867 1.03067 9.66667 1.39933 9.66667H4.6C4.96667 9.66667 5 9.36867 5 9V8.33333C5 7.96533 4.96667 7.66667 4.59933 7.66667ZM12.5993 8.33333H9.39867C9.03067 8.33333 9 8.632 9 9V9.66667C9 10.0353 9.03067 10.3333 9.39933 10.3333H12.6C12.9667 10.3333 13 10.0353 13 9.66667V9C13 8.632 12.9667 8.33333 12.5993 8.33333ZM9 5C9 4.632 8.96667 4.33333 8.59933 4.33333H5.39933C5.03067 4.33333 5 4.632 5 5V5.66667C5 6.03533 5.03067 6.33333 5.39933 6.33333H8.6C8.96667 6.33333 9 6.03533 9 5.66667V5ZM7.66667 1.4C7.66667 1.03133 7.368 1 7 1C6.63133 1 6.33333 1.03133 6.33333 1.4V3.66667H7.66667V1.4ZM6.33333 12.6C6.33333 12.9673 6.63133 13 7 13C7.36867 13 7.66667 12.9673 7.66667 12.6V7H6.33333V12.6ZM11.6667 1.4C11.6667 1.03133 11.368 1 11 1C10.6313 1 10.3333 1.03133 10.3333 1.4V7.66667H11.6667V1.4ZM10.3333 12.6C10.3333 12.9673 10.6313 13 11 13C11.3687 13 11.6667 12.9673 11.6667 12.6V11H10.3333V12.6Z" fill={selectedNav === 'Sound effects' || hoveredNav === 'Sound effects' ? '#AB9EFF' : '#A4A4B4'}/>
               </svg>
               <span style={{
                 marginLeft: '12px',
-                color: selectedNav === 'Sound effects' ? '#FFFFFF' : '#A4A4B4',
+                color: selectedNav === 'Sound effects' || hoveredNav === 'Sound effects' ? '#FFFFFF' : '#A4A4B4',
                 fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
                 fontSize: '15px',
-                fontWeight: 500
+                fontWeight: 500,
+                transition: 'color 0.3s ease'
               }}>
                 Sound effects
               </span>
@@ -277,6 +283,8 @@ export default function Home() {
             {/* Discord */}
             <div 
               onClick={() => setSelectedNav('Discord')}
+              onMouseEnter={() => setHoveredNav('Discord')}
+              onMouseLeave={() => setHoveredNav(null)}
               className="nav-item"
               style={{
                 width: '100%',
@@ -289,14 +297,14 @@ export default function Home() {
                 paddingLeft: '12px',
                 paddingRight: '12px',
                 cursor: 'pointer',
-                transition: 'all 0.2s ease'
+                transition: 'all 0.3s ease'
               }}>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ transition: 'all 0.3s ease' }}>
                 <g clipPath="url(#clip0_107_2628)">
-                  <path d="M2.77148 9.75879C6.0169 11.3815 7.96415 11.3815 11.2096 9.75879" stroke={selectedNav === 'Discord' ? '#AB9EFF' : '#A4A4B4'} strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M9.263 10.7323L9.91208 12.0305C9.91208 12.0305 12.6194 11.1685 13.482 9.75872C13.482 9.10964 13.8261 4.47064 11.5348 2.94335C10.5612 2.29427 8.93846 1.96973 8.93846 1.96973L8.28938 3.26789H6.99121" stroke={selectedNav === 'Discord' ? '#AB9EFF' : '#A4A4B4'} strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M4.73738 10.7323L4.0883 12.0305C4.0883 12.0305 1.38098 11.1685 0.518347 9.75872C0.518347 9.10964 0.174333 4.47064 2.46559 2.94335C3.43922 2.29427 5.06193 1.96973 5.06193 1.96973L5.71101 3.26789H7.00917" stroke={selectedNav === 'Discord' ? '#AB9EFF' : '#A4A4B4'} strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M4.71874 8.46059C4.1813 8.46059 3.74512 7.87966 3.74512 7.16242C3.74512 6.44519 4.1813 5.86426 4.71874 5.86426C5.25618 5.86426 5.69236 6.44519 5.69236 7.16242C5.69236 7.87966 5.25618 8.46059 4.71874 8.46059ZM9.26232 8.46059C8.72488 8.46059 8.2887 7.87966 8.2887 7.16242C8.2887 6.44519 8.72488 5.86426 9.26232 5.86426C9.79976 5.86426 10.2359 6.44519 10.2359 7.16242C10.2359 7.87966 9.79976 8.46059 9.26232 8.46059Z" stroke={selectedNav === 'Discord' ? '#AB9EFF' : '#A4A4B4'} strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M2.77148 9.75879C6.0169 11.3815 7.96415 11.3815 11.2096 9.75879" stroke={selectedNav === 'Discord' || hoveredNav === 'Discord' ? '#AB9EFF' : '#A4A4B4'} strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M9.263 10.7323L9.91208 12.0305C9.91208 12.0305 12.6194 11.1685 13.482 9.75872C13.482 9.10964 13.8261 4.47064 11.5348 2.94335C10.5612 2.29427 8.93846 1.96973 8.93846 1.96973L8.28938 3.26789H6.99121" stroke={selectedNav === 'Discord' || hoveredNav === 'Discord' ? '#AB9EFF' : '#A4A4B4'} strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M4.73738 10.7323L4.0883 12.0305C4.0883 12.0305 1.38098 11.1685 0.518347 9.75872C0.518347 9.10964 0.174333 4.47064 2.46559 2.94335C3.43922 2.29427 5.06193 1.96973 5.06193 1.96973L5.71101 3.26789H7.00917" stroke={selectedNav === 'Discord' || hoveredNav === 'Discord' ? '#AB9EFF' : '#A4A4B4'} strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M4.71874 8.46059C4.1813 8.46059 3.74512 7.87966 3.74512 7.16242C3.74512 6.44519 4.1813 5.86426 4.71874 5.86426C5.25618 5.86426 5.69236 6.44519 5.69236 7.16242C5.69236 7.87966 5.25618 8.46059 4.71874 8.46059ZM9.26232 8.46059C8.72488 8.46059 8.2887 7.87966 8.2887 7.16242C8.2887 6.44519 8.72488 5.86426 9.26232 5.86426C9.79976 5.86426 10.2359 6.44519 10.2359 7.16242C10.2359 7.87966 9.79976 8.46059 9.26232 8.46059Z" stroke={selectedNav === 'Discord' || hoveredNav === 'Discord' ? '#AB9EFF' : '#A4A4B4'} strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round"/>
                 </g>
                 <defs>
                   <clipPath id="clip0_107_2628">
@@ -306,10 +314,11 @@ export default function Home() {
               </svg>
               <span style={{
                 marginLeft: '12px',
-                color: selectedNav === 'Discord' ? '#FFFFFF' : '#A4A4B4',
+                color: selectedNav === 'Discord' || hoveredNav === 'Discord' ? '#FFFFFF' : '#A4A4B4',
                 fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
                 fontSize: '15px',
-                fontWeight: 500
+                fontWeight: 500,
+                transition: 'color 0.3s ease'
               }}>
                 Discord
               </span>
@@ -318,6 +327,8 @@ export default function Home() {
             {/* Contact Support */}
             <div 
               onClick={() => setSelectedNav('Contact support')}
+              onMouseEnter={() => setHoveredNav('Contact support')}
+              onMouseLeave={() => setHoveredNav(null)}
               className="nav-item"
               style={{
                 width: '100%',
@@ -330,11 +341,11 @@ export default function Home() {
                 paddingLeft: '12px',
                 paddingRight: '12px',
                 cursor: 'pointer',
-                transition: 'all 0.2s ease'
+                transition: 'all 0.3s ease'
               }}>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ transition: 'all 0.3s ease' }}>
                 <g clipPath="url(#clip0_107_2629)">
-                  <path d="M7.31579 10.3333L4.15789 12.3333V10.3333H2.89474C2.39222 10.3333 1.91029 10.1226 1.55496 9.74755C1.19962 9.37247 1 8.86377 1 8.33333V3C1 2.46957 1.19962 1.96086 1.55496 1.58579C1.91029 1.21071 2.39222 1 2.89474 1H10.4737C10.9762 1 11.4581 1.21071 11.8135 1.58579C12.1688 1.96086 12.3684 2.46957 12.3684 3V6M13 13C13 12.6464 12.8669 12.3072 12.63 12.0572C12.3931 11.8071 12.0719 11.6667 11.7368 11.6667H10.4737C10.1387 11.6667 9.81738 11.8071 9.5805 12.0572C9.34361 12.3072 9.21053 12.6464 9.21053 13M9.8421 9.66667C9.8421 10.0203 9.97519 10.3594 10.2121 10.6095C10.449 10.8595 10.7703 11 11.1053 11C11.4403 11 11.7616 10.8595 11.9984 10.6095C12.2353 10.3594 12.3684 10.0203 12.3684 9.66667C12.3684 9.31304 12.2353 8.97391 11.9984 8.72386C11.7616 8.47381 11.4403 8.33333 11.1053 8.33333C10.7703 8.33333 10.449 8.47381 10.2121 8.72386C9.97519 8.97391 9.8421 9.31304 9.8421 9.66667Z" stroke={selectedNav === 'Contact support' ? '#AB9EFF' : '#A4A4B4'} strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M7.31579 10.3333L4.15789 12.3333V10.3333H2.89474C2.39222 10.3333 1.91029 10.1226 1.55496 9.74755C1.19962 9.37247 1 8.86377 1 8.33333V3C1 2.46957 1.19962 1.96086 1.55496 1.58579C1.91029 1.21071 2.39222 1 2.89474 1H10.4737C10.9762 1 11.4581 1.21071 11.8135 1.58579C12.1688 1.96086 12.3684 2.46957 12.3684 3V6M13 13C13 12.6464 12.8669 12.3072 12.63 12.0572C12.3931 11.8071 12.0719 11.6667 11.7368 11.6667H10.4737C10.1387 11.6667 9.81738 11.8071 9.5805 12.0572C9.34361 12.3072 9.21053 12.6464 9.21053 13M9.8421 9.66667C9.8421 10.0203 9.97519 10.3594 10.2121 10.6095C10.449 10.8595 10.7703 11 11.1053 11C11.4403 11 11.7616 10.8595 11.9984 10.6095C12.2353 10.3594 12.3684 10.0203 12.3684 9.66667C12.3684 9.31304 12.2353 8.97391 11.9984 8.72386C11.7616 8.47381 11.4403 8.33333 11.1053 8.33333C10.7703 8.33333 10.449 8.47381 10.2121 8.72386C9.97519 8.97391 9.8421 9.31304 9.8421 9.66667Z" stroke={selectedNav === 'Contact support' || hoveredNav === 'Contact support' ? '#AB9EFF' : '#A4A4B4'} strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round"/>
                 </g>
                 <defs>
                   <clipPath id="clip0_107_2629">
@@ -344,10 +355,11 @@ export default function Home() {
               </svg>
               <span style={{
                 marginLeft: '12px',
-                color: selectedNav === 'Contact support' ? '#FFFFFF' : '#A4A4B4',
+                color: selectedNav === 'Contact support' || hoveredNav === 'Contact support' ? '#FFFFFF' : '#A4A4B4',
                 fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
                 fontSize: '15px',
-                fontWeight: 500
+                fontWeight: 500,
+                transition: 'color 0.3s ease'
               }}>
                 Contact support
               </span>
@@ -356,6 +368,8 @@ export default function Home() {
             {/* Share Feedback */}
             <div 
               onClick={() => setSelectedNav('Share feedback')}
+              onMouseEnter={() => setHoveredNav('Share feedback')}
+              onMouseLeave={() => setHoveredNav(null)}
               className="nav-item"
               style={{
                 width: '100%',
@@ -368,12 +382,12 @@ export default function Home() {
                 paddingLeft: '12px',
                 paddingRight: '12px',
                 cursor: 'pointer',
-                transition: 'all 0.2s ease'
+                transition: 'all 0.3s ease'
               }}>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ transition: 'all 0.3s ease' }}>
                 <g clipPath="url(#clip0_107_2630)">
-                  <path d="M6.39998 1C3.96666 1.00467 2.69333 1.064 1.87866 1.87866C1 2.75733 1 4.17132 1 6.99998C1 9.82864 1 11.2426 1.87866 12.1213C2.75733 13 4.17199 13 6.99998 13C9.82797 13 11.2426 13 12.122 12.1213C12.9353 11.3073 12.9953 10.0326 13 7.59998" stroke={selectedNav === 'Share feedback' ? '#AB9EFF' : '#A4A4B4'} strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M13.0006 3.01666L12.334 3.01533C9.84264 3.00866 8.59731 3.00533 7.72198 3.63532C7.43065 3.84399 7.17531 4.09866 6.96532 4.38866C6.33398 5.26399 6.33398 6.50932 6.33398 8.99997M13.0006 3.01666C13.0021 2.90093 12.9605 2.78879 12.884 2.70199C12.374 2.098 11.048 1 11.048 1M13.0006 3.01666C12.9945 3.12076 12.9536 3.21981 12.8846 3.29799C12.374 3.90199 11.0473 4.99999 11.0473 4.99999" stroke={selectedNav === 'Share feedback' ? '#AB9EFF' : '#A4A4B4'} strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M6.39998 1C3.96666 1.00467 2.69333 1.064 1.87866 1.87866C1 2.75733 1 4.17132 1 6.99998C1 9.82864 1 11.2426 1.87866 12.1213C2.75733 13 4.17199 13 6.99998 13C9.82797 13 11.2426 13 12.122 12.1213C12.9353 11.3073 12.9953 10.0326 13 7.59998" stroke={selectedNav === 'Share feedback' || hoveredNav === 'Share feedback' ? '#AB9EFF' : '#A4A4B4'} strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M13.0006 3.01666L12.334 3.01533C9.84264 3.00866 8.59731 3.00533 7.72198 3.63532C7.43065 3.84399 7.17531 4.09866 6.96532 4.38866C6.33398 5.26399 6.33398 6.50932 6.33398 8.99997M13.0006 3.01666C13.0021 2.90093 12.9605 2.78879 12.884 2.70199C12.374 2.098 11.048 1 11.048 1M13.0006 3.01666C12.9945 3.12076 12.9536 3.21981 12.8846 3.29799C12.374 3.90199 11.0473 4.99999 11.0473 4.99999" stroke={selectedNav === 'Share feedback' || hoveredNav === 'Share feedback' ? '#AB9EFF' : '#A4A4B4'} strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round"/>
                 </g>
                 <defs>
                   <clipPath id="clip0_107_2630">
@@ -383,10 +397,11 @@ export default function Home() {
               </svg>
               <span style={{
                 marginLeft: '12px',
-                color: selectedNav === 'Share feedback' ? '#FFFFFF' : '#A4A4B4',
+                color: selectedNav === 'Share feedback' || hoveredNav === 'Share feedback' ? '#FFFFFF' : '#A4A4B4',
                 fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
                 fontSize: '15px',
-                fontWeight: 500
+                fontWeight: 500,
+                transition: 'color 0.3s ease'
               }}>
                 Share feedback
               </span>
@@ -397,7 +412,7 @@ export default function Home() {
         {/* Promotional Card */}
         <div style={{
           position: 'absolute',
-          bottom: '94px', // 26px (bottom margin) + 32px (user profile stack height) + 36px (gap)
+          bottom: '78px', // 26px (bottom margin) + 32px (user profile stack height) + 36px (gap)
           left: '20px',
           right: '0px',
           width: 'calc(100% - 20px)',
@@ -409,7 +424,7 @@ export default function Home() {
           boxSizing: 'border-box',
           overflow: 'hidden',
           cursor: 'pointer',
-          transition: 'all 0.3s ease',
+          transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
           transform: 'scale(1)'
         }}
         className="promo-card">
@@ -571,13 +586,13 @@ export default function Home() {
               }
             }
             .promo-card:hover {
-              transform: scale(0.95);
+              transform: scale(0.7);
               border-color: rgba(167, 153, 255, 0.6);
               box-shadow: 0 0 20px 0 rgba(167, 153, 255, 0.3);
-              animation: strokePulse 1.5s ease-in-out infinite;
+              animation: strokePulse 2.5s ease-in-out infinite;
             }
             .promo-card:active {
-              transform: scale(0.95);
+              transform: scale(0.94);
               border-color: rgba(167, 153, 255, 0.9);
               box-shadow: 0 0 30px 0 rgba(167, 153, 255, 0.5);
             }
