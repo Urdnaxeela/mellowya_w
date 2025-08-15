@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 interface SidebarProps {
   selectedNav: string
@@ -10,6 +11,41 @@ interface SidebarProps {
 
 export default function Sidebar({ selectedNav, setSelectedNav }: SidebarProps) {
   const [hoveredNav, setHoveredNav] = useState<string | null>(null)
+  const router = useRouter()
+
+  const handleNavClick = (navItem: string) => {
+    setSelectedNav(navItem)
+    
+    // Navigate to the corresponding page
+    switch (navItem) {
+      case 'Home':
+        router.push('/home')
+        break
+      case 'All songs':
+        router.push('/allsongs')
+        break
+      case 'Inspiration':
+        router.push('/inspiration')
+        break
+      case 'Generate music':
+        router.push('/generate-music')
+        break
+      case 'Sound effects':
+        // Will add this route later
+        break
+      case 'Discord':
+        // External link or future page
+        break
+      case 'Contact support':
+        // Future page
+        break
+      case 'Share feedback':
+        // Future page
+        break
+      default:
+        break
+    }
+  }
 
   return (
     <>
@@ -42,7 +78,7 @@ export default function Sidebar({ selectedNav, setSelectedNav }: SidebarProps) {
         }}>
           {/* Home */}
           <div
-            onClick={() => setSelectedNav('Home')}
+            onClick={() => handleNavClick('Home')}
             onMouseEnter={() => setHoveredNav('Home')}
             onMouseLeave={() => setHoveredNav(null)}
             className="nav-item"
@@ -83,7 +119,7 @@ export default function Sidebar({ selectedNav, setSelectedNav }: SidebarProps) {
 
           {/* All Songs */}
           <div 
-            onClick={() => setSelectedNav('All songs')}
+            onClick={() => handleNavClick('All songs')}
             onMouseEnter={() => setHoveredNav('All songs')}
             onMouseLeave={() => setHoveredNav(null)}
             className="nav-item"
@@ -124,7 +160,7 @@ export default function Sidebar({ selectedNav, setSelectedNav }: SidebarProps) {
 
           {/* Inspiration */}
           <div 
-            onClick={() => setSelectedNav('Inspiration')}
+            onClick={() => handleNavClick('Inspiration')}
             onMouseEnter={() => setHoveredNav('Inspiration')}
             onMouseLeave={() => setHoveredNav(null)}
             className="nav-item"
@@ -183,7 +219,7 @@ export default function Sidebar({ selectedNav, setSelectedNav }: SidebarProps) {
           }}>
             {/* Generate Music */}
             <div 
-              onClick={() => setSelectedNav('Generate music')}
+              onClick={() => handleNavClick('Generate music')}
               onMouseEnter={() => setHoveredNav('Generate music')}
               onMouseLeave={() => setHoveredNav(null)}
               className="nav-item"
@@ -225,7 +261,7 @@ export default function Sidebar({ selectedNav, setSelectedNav }: SidebarProps) {
 
             {/* Sound Effects */}
             <div 
-              onClick={() => setSelectedNav('Sound effects')}
+              onClick={() => handleNavClick('Sound effects')}
               onMouseEnter={() => setHoveredNav('Sound effects')}
               onMouseLeave={() => setHoveredNav(null)}
               className="nav-item"
@@ -278,7 +314,7 @@ export default function Sidebar({ selectedNav, setSelectedNav }: SidebarProps) {
           }}>
             {/* Discord */}
             <div 
-              onClick={() => setSelectedNav('Discord')}
+              onClick={() => handleNavClick('Discord')}
               onMouseEnter={() => setHoveredNav('Discord')}
               onMouseLeave={() => setHoveredNav(null)}
               className="nav-item"
@@ -322,7 +358,7 @@ export default function Sidebar({ selectedNav, setSelectedNav }: SidebarProps) {
 
             {/* Contact Support */}
             <div 
-              onClick={() => setSelectedNav('Contact support')}
+              onClick={() => handleNavClick('Contact support')}
               onMouseEnter={() => setHoveredNav('Contact support')}
               onMouseLeave={() => setHoveredNav(null)}
               className="nav-item"
@@ -363,7 +399,7 @@ export default function Sidebar({ selectedNav, setSelectedNav }: SidebarProps) {
 
             {/* Share Feedback */}
             <div 
-              onClick={() => setSelectedNav('Share feedback')}
+              onClick={() => handleNavClick('Share feedback')}
               onMouseEnter={() => setHoveredNav('Share feedback')}
               onMouseLeave={() => setHoveredNav(null)}
               className="nav-item"
